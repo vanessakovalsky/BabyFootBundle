@@ -1,0 +1,39 @@
+{% extends 'BabyFootBundle::layout.html.twig' %}
+
+{% block body %}
+    <h1>Tournament list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Beginingdate</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tournament in tournaments %}
+            <tr>
+                <td><a href="{{ path('tournament_show', { 'id': tournament.id }) }}">{{ tournament.id }}</a></td>
+                <td>{% if tournament.beginingDate %}{{ tournament.beginingDate|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tournament_show', { 'id': tournament.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tournament_edit', { 'id': tournament.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tournament_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

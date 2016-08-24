@@ -1,0 +1,9 @@
+    -> 
+    -> 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '\Entity' at line 1
+mysql> SELECT tour, p FROM tournament tour INNER JOIN tour.id tournament_team.tournament_id INNER JOIN team.id player.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.tournament_id INNER JOIN team.id player.id' at line 1
+mysql> SELECT tour, p FROM tournament tour INNER JOIN tour.id tournament_team.tournament_id INNER JOIN team.id player.id;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '.tournament_id INNER JOIN team.id player.id' at line 1
+mysql> exit

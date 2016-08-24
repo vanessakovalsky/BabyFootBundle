@@ -1,0 +1,7 @@
+<ul>
+<ul class="nav">
+	{% for item in liste %}
+	<li><a href="{{ path(item.route_name) }}">{{ item.titre }}</a></li>
+	{% endfor %}
+</ul>
+</ul>
